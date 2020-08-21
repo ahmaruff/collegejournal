@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+    font-family: "Abril Fatface";
+    src: url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+h1 {
+    font-family: 'Abril Fatface';
+    font-weight: bolder;
+    font-size: 34pt;
+    color: #333;
+}
+
+.navbar-header {
+    padding-left: 5%;
+}
+
+
+.visible-md-inline-block, .visible-lg-inline-block, .visible-sm-inline-block, .visible-xs-inline-block {
+    display: inline-block;
+    font-family: 'Abril Fatface';
+    font-weight: bold;
+    font-size: calc(100% + 1.5vw);
+    word-wrap: normal;
+}
+
+.navbar-collapse {
+    padding-left: 10px;
+}

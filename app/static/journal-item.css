@@ -1,0 +1,30 @@
+.course-name {
+	color: grey;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	background-color: white;
+	
+	
+}
+ 
+.date {
+    background-color: grey;
+	color:white;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+.body{
+    padding-top: 1rem;
+}
+
+#username {
+    color: grey;
+	padding-right: 1rem;
+	padding-left: 1rem;
+    background-color: white;
+    font-style: italic;
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Not Found{% endblock  %}
+
+{% block page_content %}
+    <div class="container" style="text-align: center;">
+        <div class="col-md-12">
+            <h1>Oopss!</h1>
+            <h2>Error 404 - Page not found</h2>
+            <hr>
+            <br>
+            <p>
+                Maybe the page you're looking for is not found or never existed.
+            </p>
+            <br>
+            <a class="btn btn-info" role="button" href="{{ url_for('main.index')}}">
+                Back to home
+            </a>
+        </div>
+    </div>
+{% endblock %}

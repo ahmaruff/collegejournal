@@ -1,0 +1,30 @@
+.journal-course {
+	color: grey;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	background-color: white;
+	
+	
+}
+ 
+.journal-date {
+    background-color: grey;
+	color:white;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+.journal-body{
+    padding-top: 0.5rem;
+}
+
+.journal-title {
+    padding-top: 3rem;
+    font-size: larger;
+	font-style: italic;
+	font-family: "Abril Fatface";
+	font-weight: bolder;
+}

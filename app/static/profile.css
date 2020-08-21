@@ -1,0 +1,20 @@
+#username {
+    font-style: italic;
+    color: gray;
+}
+
+.col-md-6 {
+    padding: 1rem;
+}
+
+#profile-content {
+    padding: 1rem;
+    background-color: darkseagreen;
+    color: white;
+}
+
+#about_me {
+    padding: 1rem;
+    font-style: italic;
+    min-height: 150px;
+}

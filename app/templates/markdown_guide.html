@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Markdown guide
+{% endblock title %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>Markdown Guide</h1>
+        <hr>
+    </div>
+    <div class="col-md-10">
+        <p style="background-color: rgb(214, 212, 212); padding: 1rem;">This is basic guide to write Markdown properly.<br>
+            This guide almost cover all of your Markdown needs  </p>
+        <div class="table-of-content">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#blockquotes">Blockquotes</a></li>
+                <li><a href="#header">Header</a></li>
+                <li><a href="#new-line">New line</a></li>
+                <li><a href="#block-code">Block Code</a></li>
+                <li><a href="#inline-code">Inline Code</a></li>
+                <li><a href="#italic-bold">Italic & bold</a></li>
+                <li><a href="#horizontal-line">horizontal-line</a></li>
+                <li><a href="#inline-link">Inline Link</a></li>
+                <li><a href="#ref-link">Reference link</a></li>
+                <li><a href="#list">List</a></li>
+            </ul>
+
+        </div>
+        <br>
+        <div id="blockquotes">
+            <h2>Blockquotes</h2>
+            <p>untuk membuat blockquotes, setiap awal line tulisan perlu di tambah tanda '>' </p>
+            <p>Markdown</p>
+            <table class="table table-striped">
+                <tr>
+                    <td>
+                        > ## blockquoted header <br>
+                        > blockquoted text 1 <br>
+                        > blockquoted text 2 <br>
+                        > blockquoted text 3 <br>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>output</p>
+            <table>
+                <tr>
+                    <td>
+                        <blockquote>
+                            <h2>Blockquoted header</h2>
+                            <p>blockquoted text 1</p>
+                            <p>blockquoted text 2</p>
+                            <p>blockquoted text 3</p>
+                        </blockquote>
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+        <hr>
+        <div id="header">
+            <h2>Header</h2>
+            <p>untuk membuat header/headings, setiap awal line tulisan perlu di tambah tanda '#' </p>
+            <p>Markdown</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        # Heading 1 <hr>
+                        ## Heading 2 <hr>
+                        ### Heading 3 <hr>
+                    </td>
+                </tr>
+            </table class="table table-bordered">
+            <br>
+            <p>output</p>
+            <table>
+                <tr>
+                    <td>
+                        <h1>Heading 1</h1>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h3>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div id="new-line">
+            <h2>New line/enter</h2>
+            <p>untuk membuat new line/enter, setiap akhir line tulisan perlu di tambah 2 tanda spasi </p>
+            <p>Markdown</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        new line 1 <br>
+                        new line 2  
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>output</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        <p>new line 1</p>
+                        <p>new line 2</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div id="block-code">
+             <h2>Block Code</h2>
+            <p>untuk membuat block code, setiap awal line tulisan perlu di tambah indentasi berupa 4 spasi </p>
+            <p>Markdown</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        ## headings 2 <br>
+                            <span style="color: white;">www</span>block code line 1<br>
+                            <span style="color: white;">www</span>block code line 2<br>
+                        teks biasa  
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>output</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        <h2>Headings 2</h2>
+                        <code>
+                            block code line 1 <br>
+                            block code line 2
+                        </code>
+                        <p>text biasa</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div id="inline-code">
+            <h2>Inline Code</h2>
+            <p>untuk membuat Inline code, setiap awal & akhir tulisan perlu di tambah tanda (`) </p>
+            <p>Markdown</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                      ini `inline code` bro
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>output</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        ini <code>inline code</code> bro
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div  id="italic-bold">
+            <h2>Italic dan Bold</h2>
+            <p>untuk membuat tulisan italic, setiap awal & akhir tulisan perlu di tambah satu tanda (*) atau (_) </p>
+            <p>sedangkan untuk bold, setiap awala dan akhit tulisan perlu ditambah DUA tanda (*) atau (_)</p>
+            <p>Markdown</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                      ini text *italic* ini juga _italic_ <br>
+                      ini text **bold** ini juga __bold__
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>output</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        ini text <i>italic</i> ini juga <i>italic</i> <br>
+                        ini text <b>bold</b> ini juga <b>bold</b>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div id="horizontal-line">
+            <h2>Horizontal Rule</h2>
+            <p>untuk membuat Horizontal rule, pada line yang akan diberi garis bawah, beri tanda strip (-) 3 kali atau lebih </p>
+            <p>Markdown</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                      random text <br>
+                      ---
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>output</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        random text <br>
+                        <hr />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div id="inline-link">
+            <h2>inline Link</h2>
+            <p>Markdown</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                      this is an [example link](https://example.com)
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>output</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        <p>this is an <a href="https://example.com">example link</a></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div id="ref-link">
+            <h2>link Reference</h2>
+            <p>link dengan gaya referensi memudahkan kita untuk memanggil link itu berdasarkan nama. yang mana bisa kita panggil dibagian manapun pada page tersebut</p>
+            <p>Markdown</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        ini adalah panduan dari [Markdown][1]<br>
+                        [1]: https://markdownguide.org "Markdown"
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>output</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        <p>ini adalah panduan dari <a href="https://markdownguide.org" target="_blank">Markdown</a></p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <hr>
+        <div id="list">
+            <h2>List</h2>
+            <p>Markdown</p>
+            <p>gunakan salah satu tanda (*),(-),(+) untuk membuat list</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        - list<br>
+                        * list<br>
+                        + list<br>
+                        <br>
+                        - nested list <br>
+                        <span style="color: white;">www</span>+ nested list<br>
+                            <span style="color: white;">www</span>+ nested list<br>
+
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <p>output</p>
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        <ul>
+                            <li>list</li>
+                            <li>list</li>
+                            <li>list</li>
+                            <li> nested list
+                                <ul>
+                                    <li> nested list</li>
+                                    <li> nested list</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+{% endblock page_content %}

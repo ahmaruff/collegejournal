@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% import '_macros.html' as macros %}
+
+{% block title %}
+    journal - Jurnal Perkuliahan
+{% endblock title %}
+
+{% block styles %}
+     {{super()}}
+     <link rel="stylesheet" href="{{url_for('static', filename='journal-item.css')}}">
+{% endblock styles %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ pagedown.include_pagedown() }}
+{% endblock %}
+
+{% block page_content %}
+<div class="content">
+    <div class="col-md-9">
+        <h1>{{ journal.journal_title }}</h1>
+        <p id="username">{{ journal.student.username }}</p>
+        <hr>
+        <div class="journal-item">
+            <div class="date col-md-4">{{ journal.timestamp.strftime('%Y-%m-%d // %I:%M %p') }}</div>
+            <div class="course-name col-md-8">{{ journal.course.course_name }}, Semester {{ journal.course.semester }}</div>
+            <br>
+            <div class="body">{{ md_text | markdown }}</div>
+        </div>
+    </div>
+</div>
+{% endblock page_content %}

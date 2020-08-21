@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+    Profile - {{ student.fullname }}
+{% endblock title %}
+
+{% block styles %}
+     {{super()}}
+     <link rel="stylesheet" href="{{url_for('static', filename='profile.css')}}">
+{% endblock styles %}
+
+{% block page_content %}
+    <div class="col-md-6">
+        <h1>{{ student.fullname }}</h1>
+        <p id="username">{{ student.username }}</p>
+        <div class="content">
+            <p id="profile-content">
+                {{ student.department }}, {{ student.faculty }} - {{ student.university }}
+            </p>
+            <hr>
+            <p id="about_me">
+                {{ student.about_me }}
+            </p>
+            <hr>
+            <a href="{{ url_for('main.edit_profile') }}">Edit your profile</a>
+        </div>
+    </div>
+{% endblock page_content %}

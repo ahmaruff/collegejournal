@@ -1,0 +1,26 @@
+
+
+<ul class="journals">
+    {% for journal in journals %}
+    <li class="journal">
+        <div class="journal-date col-md-4">{{ journal.timestamp.strftime('%Y-%m-%d // %I:%M %p') }}</div>
+        <div class="journal-course col-md-5">{{ journal.course.course_name }}, Semester {{ journal.course.semester }}</div>
+        <div class="journal-title" style="padding-bottom: 1rem;">{{ journal.journal_title }}</div>
+        <div class="journal-body">
+            {% if journal.journal_html %}
+                {{ journal.journal_html | safe }}
+            {% else %}
+                {{ journal.journal }}
+            {% endif %}
+        </div>
+        <a href="{{ url_for('journal.journal_id', id=journal.id) }}" target='_blank'>
+            <span class="label label-info">permalink</span>
+        </a>
+        <a href="{{ url_for('journal.edit', id=journal.id) }}">
+            <span class="label label-warning">Edit</span>
+        </a>
+        <br>
+        <hr>
+    </li>
+    {% endfor %}
+    </ul>

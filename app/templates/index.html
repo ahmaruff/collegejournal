@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block styles %}
+     {{super()}}
+     <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+{% endblock styles %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ pagedown.include_pagedown() }}
+{% endblock %}
+
+{% block page_content %}
+<div class="row">
+    <div class="col-md-3">
+        <h1>Hi Bro!</h1>
+        <hr>
+        <div class="journal-form">
+            <a class="btn btn-default btn-block" role="button" href="{{ url_for('journal.add') }}">ADD NEW JOURNAL</a>
+            <a class="btn btn-default btn-block" role="button" href="{{ url_for('course.index') }}">ADD NEW COURSE</a>
+            <br>
+            <a role="button" href="{{ url_for('main.md') }}">How to write Markdown</a>
+            <hr>
+        </div>
+    </div>
+    <div class="col-md-9">
+        {% if not latest_journal %}
+        <h1>Latest Journal</h1>
+        <hr>
+        <div>
+            <p>
+                There's no journal yet, <a href="{{ url_for('journal.add') }}">create a new one</a>
+            </p>
+        </div>
+        {% else %}
+        <h1>Latest Journal</h1>
+        <hr>
+        <div class="journal-item">
+            <table>
+                <td id="date">{{ latest_journal.timestamp.strftime('%Y/%m/%d') }}</td>
+                <td id='course_name'>{{ latest_journal.course.course_name }}</td>
+            </table>
+            <div class="col-md-10 item">
+                <h1>{{ latest_journal.journal_title }}</h1>
+                <hr>
+                <p>{{ md_text | markdown }}</p>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock page_content %}

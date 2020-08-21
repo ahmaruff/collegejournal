@@ -1,0 +1,49 @@
+.col-md-3 {
+	min-height: 250px;
+	padding: 1rem;
+}
+
+.journal-form {
+	padding: 1rem;
+}
+
+.col-md-9 {
+	padding: 1rem;
+}
+
+.journal-item >* {
+	border-left: 2px solid gray;
+	padding: 1rem;
+}
+
+table {
+	padding: 1rem;
+	background-color: grey;
+	border: 1px solid grey;
+}
+#course_name {
+	color: grey;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	background-color: white;
+	
+	
+}
+ 
+#date {
+
+	display: list-item;
+	color:white;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	font-weight: bold;
+	font-style: italic;
+}
+
+
+h3 {
+	margin-top: 0px;
+	font-style: italic;
+	font-family: "Abril Fatface";
+	font-weight: bold;
+}

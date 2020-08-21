@@ -1,0 +1,32 @@
+{% extends 'base.html' %}\
+{% block title %}
+    About - Jurnal Perkuliahan
+{% endblock title %}
+
+{% block styles %}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='about.css')}}">
+{% endblock styles %}
+
+{% block page_content %}
+    <div class="col-md-8">
+        <h1>About Us</h1>
+        <hr>
+        <div class="content">
+            <h2>We build a supportive environment for student life</h2>
+            <br>
+            <p style="text-align: justify;">
+                Kami percaya bahwa banyak hal penting yang luput dari perhatian mahasiswa. 
+                Salah satunya ialah manajemen catatan perkuliahan.
+                Program ini kami bangun sebagai jawaban akan hal itu. Dengan model jurnal/diary, 
+                diharapkan mahasiswa bisa dengan jujur menulis uneg-unegnya mengenai proses belajarnya di kampus.
+                Hal ini penting sebagai bahan evaluasi bagi mahasiswa itu sendiri. 
+                Dengan jurnal-jurnal tersebut diharapkan mahasiswa mampu menilai seberapa baik pemahaman mereka tentang materi perkuliahan.<br><br>
+                
+                Tentu program ini masih jauh dari kata sempurna. 
+                Oleh karena itu kami akan sangat senang apabila pengguna memberikan feedback, atau bahkan <a href="https://github.com/ahmaruff/collegejournal" target="_blank">ikut serta mengembangkan program sederhana ini</a>
+            </p><br>
+            <a href="https://github.com/ahmaruff" target="_blank">Creator</a>
+        </div>
+    </div>
+{% endblock page_content %}

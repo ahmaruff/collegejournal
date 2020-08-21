@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% import '_macros.html' as macros %}
+
+{% block title %}
+    journal - Jurnal Perkuliahan
+{% endblock title %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ pagedown.include_pagedown() }}
+{% endblock %}
+
+{% block styles %}
+     {{super()}}
+     <link rel="stylesheet" href="{{url_for('static', filename='journal-list.css')}}">
+{% endblock styles %}
+
+{% block page_content %}
+<div class="content">
+    <div class="col-md-8">
+        <h1>Journals</h1>
+        <br>
+        <a class=" btn btn-default"style="float: right; position: relative; left:-50%; color: grey;"
+          href="{{ url_for('journal.add') }}"><b>Add new journal</b>
+        </a>
+        <hr>
+        <br><br>
+      <div class="col-md-12">
+          {% include 'journal/_journals.html' %}
+          <hr>
+      </div>
+      <div class="pagination col-md-12">
+        {{ macros.pagination_widget(pagination, '.index') }}
+      </div>  
+    </div>
+</div>
+{% endblock page_content %}

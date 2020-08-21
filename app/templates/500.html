@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Internal Server Error{% endblock  %}
+
+{% block page_content %}
+    <div class="container" style="text-align: center;">
+        <div class="col-md-12">
+            <h1>Oopss!</h1>
+            <h2>Error 500 - Internal server error</h2>
+            <hr>
+            <br>
+            <p>
+                Something went wrong!.<br>
+                Please try again later or feel free to contact us if the problem persists.
+            </p>
+            <br>
+            <a class="btn btn-info" role="button" href="{{ url_for('main.index')}}">
+                Back to home
+            </a>
+        </div>
+    </div>
+{% endblock %}

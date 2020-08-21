@@ -1,0 +1,33 @@
+{% block styles %}
+    <style>
+        ul > * {
+            padding:0.5rem;
+        }
+    </style>
+{% endblock styles %}
+<h2>Markdown cheat sheet</h2>
+<a href="{{ url_for('main.md') }}" target="_blank">Detailed cheat sheet</a>
+<hr>
+<ul>
+    <li>### Heading</li>
+    <li>**Bold text**</li>
+    <li>_italic_</li>
+    <li>> Block quote</li>
+    <li>---- (horizontal rule)</li>
+    <li>[click here](https://www.example.com)</li>
+    <li>` inline code `</li>
+    <li>add 4 space (indentation) to create block code</li>
+    <li>add 2 space in the end of a line, to enter/create new line</li>
+    <li>
+        <p>
+            1. ordered list-1 <br>
+            2.  ordered list-2
+         </p>
+    </li>
+    <li>
+        <p>
+            - unordered list-1 <br>
+            - unordered list-2
+        </p>
+    </li>
+</ul>

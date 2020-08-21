@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    Add Journal - Jurnal Perkuliahan
+{% endblock title %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ pagedown.include_pagedown() }}
+{% endblock %}
+
+<!-- {% block styles %}
+     {{super()}}
+     <link rel="stylesheet" href="{{url_for('static', filename='auth.css')}}">
+{% endblock styles %} -->
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>Add new Journal</h1>
+    </div>
+    <div class="col-md-6">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ wtf.form_field(form.title) }}
+            {{ wtf.form_field(form.course_list) }}
+            {{ form.body(cols=60, rows=10) }}
+            <br>
+            {{ wtf.form_field(form.submit) }}
+        </form>
+    </div>
+    <div class="col-md-6">
+        <div>
+            {% include '_md-cheat.html' %}
+            <hr>
+        </div>
+    </div>
+{% endblock page_content %}
