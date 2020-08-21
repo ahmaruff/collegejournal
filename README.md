@@ -1,4 +1,4 @@
-# Flask-Jurnalkuliah
+# College Journal
 a simple college-journal entries app, made with flask.
 
 
