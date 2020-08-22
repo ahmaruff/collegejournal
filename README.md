@@ -57,15 +57,15 @@ take a look to [this page](https://flask-sqlalchemy.palletsprojects.com/en/2.x/c
 
   ```
   on Linux:
-  $ export FLASK_APP=journal.py
+  $ export FLASK_APP=run.py
   $ export FLASK_CONFIG='development'
   
   on Windows CMD:
-  $ set FLASK_APP='journal.py'
+  $ set FLASK_APP='run.py'
   $ set FLASK_CONFIG='development'
   
   on Windows Powershell:
-  $ $env:FLASK_APP='journal.py'
+  $ $env:FLASK_APP='run.py'
   $ $env:FLASK_CONFIG='development'
 
   ```  
@@ -87,15 +87,15 @@ take a look to [this page](https://flask-sqlalchemy.palletsprojects.com/en/2.x/c
   
   ```
   on Linux:
-  $ export FLASK_APP=journal.py
+  $ export FLASK_APP=run.py
   $ export FLASK_CONFIG='development'
   
   on Windows CMD:
-  $ set FLASK_APP='journal.py'
+  $ set FLASK_APP='run.py'
   $ set FLASK_CONFIG='development'
   
   on Windows Powershell:
-  $ $env:FLASK_APP='journal.py'
+  $ $env:FLASK_APP='run.py'
   $ $env:FLASK_CONFIG='development'
   ```
   
