@@ -134,7 +134,7 @@ If you need to use `Environment Variables` to setup your app, please refer to [t
     d. run `flask shell` on your terminal, (note the terminal icon change from $ to >>>)  
     e. run this command    
     ```
-    from journal import db
+    from run import db
     db.create_all()
     ```  
     f. your database ready to use
