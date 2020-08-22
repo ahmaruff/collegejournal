@@ -5,6 +5,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from app import login_manager
 from  markdown import markdown
 import bleach
+from flask import current_app
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
 class Student(db.Model, UserMixin):
     __tablename__ = 'students'
@@ -16,9 +18,30 @@ class Student(db.Model, UserMixin):
     faculty = db.Column(db.String(64), nullable=True)
     university = db.Column(db.String(64), nullable=True)
     about_me = db.Column(db.Text, nullable=True)
-
     courses = db.relationship('Course', secondary='journals')
+    
+    #confirmation token
+    confirmed = db.Column(db.Boolean, default=False)
 
+    def generate_confirmation_token(self, expiration=3600):
+        s = Serializer(current_app.config['SECRET_KEY'], expiration)
+        return s.dumps({'confirm' : self.id}).decode("utf-8")
+    
+    def confirm(self, token):
+        s = Serializer(current_app.config['SECRET_KEY'])
+        try:
+            data = s.loads(token.encode("utf-8"))
+        except:
+            return False
+        if data.get('confirm') != self.id:
+            return False
+        self.confirmed = True
+        db.session.add(self)
+        return True
+
+
+
+    #pasword
     password_hash = db.Column(db.String(128))
 
     @property
@@ -32,7 +55,7 @@ class Student(db.Model, UserMixin):
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
 
-
+    
     def __repr__(self):
         return '<Student %r>' % self.username
 
@@ -71,9 +94,9 @@ class Journal(db.Model):
 
     @staticmethod
     def on_changed_journal(target, value, oldvalue, initiator):
-        allowed_tags = ['a', 'abbr', 'acronym', 'b', 'bockquote', 'code',
+        allowed_tags = ['a', 'abbr', 'acronym', 'b', 'blockquote', 'code',
                         'em', 'i', 'li', 'ol', 'pre', 'strong', 'ul', 'h1',
-                        'h2', 'h3', 'p']
+                        'h2', 'h3', 'p',]
         target.journal_html = bleach.linkify(bleach.clean(\
             markdown(value, output_format='html'),
             tags=allowed_tags, strip=True))

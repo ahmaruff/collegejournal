@@ -5,6 +5,7 @@ from config import config
 from flask_login import LoginManager
 from flask_pagedown import PageDown
 from flaskext.markdown import Markdown
+from flask_mail import Mail
 
 
 pagedown = PageDown()
@@ -12,6 +13,7 @@ db = SQLAlchemy()
 bootstrap = Bootstrap()
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
+mail = Mail()
 
 
 def create_app(config_name):
@@ -25,7 +27,7 @@ def create_app(config_name):
     db.init_app(app)
     pagedown.init_app(app)
     Markdown(app)
-
+    mail.init_app(app)
     login_manager.init_app(app)
 
     #attach custom routes and errors here

@@ -37,7 +37,7 @@ def add():
                             )
         db.session.add(journal)
         db.session.commit()
-        return redirect(url_for('note.index'))
+        return redirect(url_for('journal.index'))
     return render_template('journal/add.html', form=form)
 
 @journal.route('/edit/<int:id>', methods=['GET','POST'])
@@ -55,7 +55,7 @@ def edit(id):
         journal.journal = form.body.data
         db.session.add(journal)
         db.session.commit()
-        return redirect(url_for('note.journal_id', id=journal.id))
+        return redirect(url_for('journal.journal_id', id=journal.id))
     form.title.data = journal.journal_title
     form.course_list.data = journal.course
     form.body.data = journal.journal

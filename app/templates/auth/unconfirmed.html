@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Confirm Email
+{% endblock title %}
+
+<!-- {% block styles %}
+     {{super()}}
+     <link rel="stylesheet" href="{{url_for('static', filename='auth.css')}}">
+{% endblock styles %} -->
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Hello {{current_user.fullname}}</h1>
+</div>
+<div class="col-md-8">
+    <h2>You have not confirmed your account yet!</h2>
+    <p>Before you can access this site, you need to confirm your account first.
+         Check your inbox, you should have recivied an email with confirmation link.<br>
+
+         Need to resend your confirmation email? 
+        <a href="{{ url_for('auth.resend_confirmation') }}">Click here</a>
+    </p>
+</div>
+{% endblock page_content %}
