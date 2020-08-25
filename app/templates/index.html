@@ -9,6 +9,10 @@
     {{ pagedown.include_pagedown() }}
 {% endblock %}
 
+{% block flash_msg %}
+    {% include '_flash-msg.html' %}
+{% endblock flash_msg %}
+
 {% block page_content %}
 <div class="row">
     <div class="col-md-3">
@@ -36,7 +40,7 @@
         <hr>
         <div class="journal-item">
             <table>
-                <td id="date">{{ latest_journal.timestamp.strftime('%Y/%m/%d') }}</td>
+                <td id="date">{{ moment(latest_journal.timestamp).format('lll') }}</td>
                 <td id='course_name'>{{ latest_journal.course.course_name }}</td>
             </table>
             <div class="col-md-10 item">

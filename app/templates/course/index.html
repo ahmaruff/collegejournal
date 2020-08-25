@@ -10,6 +10,10 @@
      <link rel="stylesheet" href="{{url_for('static', filename='course.css')}}">
 {% endblock styles %} -->
 
+{% block flash_msg %}
+    {% include '_flash-msg.html' %}
+{% endblock flash_msg %}
+
 {% block page_content %}
 <div class="row">
     <div class="col-md-4">

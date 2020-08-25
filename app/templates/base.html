@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="{{url_for('static', filename='custom.css')}}">
 {% endblock styles %}
 
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+{% endblock scripts %}
+
 {% block title %}
     Journal Kuliah
 {% endblock title %}
@@ -52,6 +57,9 @@
 
 {% block content %}
     <div class="container" style="padding-top: 65px;">
+    {% block flash_msg %}
+    {% endblock flash_msg %}
+
     {% block page_content %}
     {% endblock page_content %}
     </div>

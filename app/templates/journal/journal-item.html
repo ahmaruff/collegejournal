@@ -23,7 +23,7 @@
         <p id="username">{{ journal.student.username }}</p>
         <hr>
         <div class="journal-item">
-            <div class="date col-md-4">{{ journal.timestamp.strftime('%Y-%m-%d // %I:%M %p') }}</div>
+            <div class="date col-md-4">{{ moment(journal.timestamp).format('lll') }}</div>
             <div class="course-name col-md-8">{{ journal.course.course_name }}, Semester {{ journal.course.semester }}</div>
             <br>
             <div class="body">{{ md_text | markdown }}</div>

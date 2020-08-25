@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, request, abort
+from flask import render_template, redirect, url_for, request, abort, flash
 from flask_login import login_required, current_user
 from ..models import Journal, Student, Course
 from .forms import AddNewJournal, EditJournal
@@ -37,6 +37,7 @@ def add():
                             )
         db.session.add(journal)
         db.session.commit()
+        flash('Your journal has been added successfully', 'success')
         return redirect(url_for('journal.index'))
     return render_template('journal/add.html', form=form)
 
@@ -55,6 +56,7 @@ def edit(id):
         journal.journal = form.body.data
         db.session.add(journal)
         db.session.commit()
+        flash('Your journal has been edited', 'info')
         return redirect(url_for('journal.journal_id', id=journal.id))
     form.title.data = journal.journal_title
     form.course_list.data = journal.course
@@ -71,4 +73,5 @@ def remove(id):
         abort(403)
     db.session.delete(journal)
     db.session.commit()
+    flash('Your journal has been removed', 'info')
     return redirect(url_for('journal.index'))

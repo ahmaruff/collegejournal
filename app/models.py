@@ -8,6 +8,7 @@ import bleach
 from flask import current_app
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 
+
 class Student(db.Model, UserMixin):
     __tablename__ = 'students'
     id = db.Column(db.Integer, primary_key=True)
@@ -55,10 +56,24 @@ class Student(db.Model, UserMixin):
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+
+    #reset password
+    def generate_reset_password_token(self, expiration=600):
+        s = Serializer(current_app.config['SECRET_KEY'], expiration)
+        return s.dumps({'reset_password' : self.id}).decode("utf-8")
+    
+    @staticmethod
+    def verify_reset_password_token(token):
+        s = Serializer(current_app.config['SECRET_KEY'])
+        try:
+            id = s.loads(token.encode("utf-8"))['reset_password']
+        except:
+            return False
+        return Student.query.get(id)
+        
     
     def __repr__(self):
         return '<Student %r>' % self.username
-
 
 class Course(db.Model):
     __tablename__ = 'courses'

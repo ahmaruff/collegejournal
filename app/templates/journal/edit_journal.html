@@ -15,6 +15,10 @@
      <link rel="stylesheet" href="{{url_for('static', filename='auth.css')}}">
 {% endblock styles %} -->
 
+{% block flash_msg %}
+    {% include '_flash-msg.html' %}
+{% endblock flash_msg %}
+
 {% block page_content %}
     <div class="page-header">
         <h1>Edit Journal</h1>

@@ -34,4 +34,13 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Name  should be capitalize in each word (example : Valid Full Name)')
 
 
+class ResetPasswordRequest(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Length(1,64), Email()])
+    submit = SubmitField('Request Password Reset')
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('New Password',validators=[DataRequired(), EqualTo('password2', message='Password must match')])
+    password2 = PasswordField('Confirm Password', validators=[DataRequired()])
+    submit = SubmitField('Reset Password')
+
 
