@@ -89,14 +89,20 @@ take a look to [this page](https://flask-sqlalchemy.palletsprojects.com/en/2.x/c
   on Linux:
   $ export FLASK_APP=run.py
   $ export FLASK_CONFIG='development'
+  $ export MAIL_USERNAME='youraccount@gmail.com'
+  $ export MAIL_PASSWORD='your-gmail-password'
   
   on Windows CMD:
   $ set FLASK_APP='run.py'
   $ set FLASK_CONFIG='development'
+  $ set MAIL_USERNAME='youraccount@gmail.com'
+  $ set MAIL_PASSWORD='your-gmail-password'
   
   on Windows Powershell:
   $ $env:FLASK_APP='run.py'
   $ $env:FLASK_CONFIG='development'
+  $ $env:MAIL_USERNAME='youraccount@gmail.com'
+  $ $env:MAIL_PASSWORD='your-gmail-password'
   ```
   
   3. run this command on your terminal
@@ -107,14 +113,11 @@ take a look to [this page](https://flask-sqlalchemy.palletsprojects.com/en/2.x/c
   5. try open browser and access `http://localhost:5000`
           
 ## Production Deployment  
-> Currently we did not spend lot of time on security, so we did not recomend deploying this app into production.  
-> There's no `registration token` for new-user registration yet, so please think wisely if you want to deploy this app into production. or we'll be very gratefull if you could contribute adding this feature to this app.    
-
 These are reference link about how to deploy this app into [pythonanywhere](https://pythonanywhere.com)  
 - [how to deploy existing django app to pythonanywhere](https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/)  
 - [setting up flask application on pythonanywhere](https://help.pythonanywhere.com/pages/Flask/)  
 
-If you need to use `Environment Variables` to setup your app, please refer to [this page](https://help.pythonanywhere.com/pages/environment-variables-for-web-apps/)  
+Please refer to [this page](https://help.pythonanywhere.com/pages/environment-variables-for-web-apps/) to setup `environment variable`  
 
 ### Database Setup on Pythonanywhere
 1. Create new database from database menu on Pythonanywhere dashboard.
@@ -144,6 +147,10 @@ If you need to use `Environment Variables` to setup your app, please refer to [t
 ## Build With
 - [Python](https://www.python.org) -Programing Language that used.
 - [Flask](https://flask.palletsprojects.com/en/1.1.x/) -Web Framework that used
+
+## Todo  
+- testcase
+- admin-interface
 
 ## Author
 - [Ahmad Ma'ruf](https://github.com/ahmaruff)  
