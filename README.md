@@ -74,7 +74,7 @@ take a look to [this page](https://flask-sqlalchemy.palletsprojects.com/en/2.x/c
   d. run this command:
   
   ```
-    from journal import db (click enter)
+    from run import db (click enter)
     
     db.create_all() (click enter)
     
@@ -151,6 +151,7 @@ Please refer to [this page](https://help.pythonanywhere.com/pages/environment-va
 ## Todo  
 - testcase
 - admin-interface
+- documentation  
 
 ## Author
 - [Ahmad Ma'ruf](https://github.com/ahmaruff)  
