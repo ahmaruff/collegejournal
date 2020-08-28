@@ -31,7 +31,7 @@ class RegistrationForm(FlaskForm):
     def validate_fullname(self, field):
         valid_name = field.data.title()
         if valid_name != field.data:
-            raise ValidationError('Name  should be capitalize in each word (example : Valid Full Name)')
+            raise ValidationError('Name  should be capitalize in each word and does not contains special character (example : Valid Full Name)')
 
 
 class ResetPasswordRequest(FlaskForm):

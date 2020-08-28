@@ -14,17 +14,17 @@ def index():
         md_text = 'random string and never showed up, btw'
     else:
         md_text = latest_journal.journal
-    return render_template('index.html', latest_journal=latest_journal, md_text=md_text)
+    return render_template('main/index.html', latest_journal=latest_journal, md_text=md_text)
 
 
 @main.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('main/about.html')
 
 @main.route('/profile/<username>')
 def profile(username):
     student = Student.query.filter_by(username=username).first_or_404()
-    return render_template('profile.html', student=student)
+    return render_template('main/profile.html', student=student)
 
 @main.route('/edit-profile', methods=['GET','POST'])
 @login_required
@@ -45,8 +45,8 @@ def edit_profile():
     form.faculty.data = current_user.faculty
     form.university.data = current_user.university
     form.about_me.data = current_user.about_me
-    return render_template('edit_profile.html', form=form)
+    return render_template('main/edit_profile.html', form=form)
 
 @main.route('/markdown-guide')
 def md():
-    return render_template('markdown_guide.html')
+    return render_template('main/markdown_guide.html')

@@ -14,5 +14,5 @@ class AddCourseForm(FlaskForm):
         
         valid_name = field.data.title()
         if valid_name != field.data:
-            raise ValidationError('Course name  should be capitalize in each word (example : Valid Course Name)')
+            raise ValidationError('Course name  should be capitalize in each word and does not contains special character (example : Valid Course Name)')
     

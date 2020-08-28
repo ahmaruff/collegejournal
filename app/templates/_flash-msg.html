@@ -5,7 +5,7 @@
         <div id="{{category}}" class="alert alert-{{ category if category != 'message' else 'warning' }} \
          alert-dismissible collapse in" style="width: 60%">
             <a href="#{{category}}" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong>{{ category }}!</strong> - {{ message }} <br>
+            <strong>{{ category.title() }}!</strong> - {{ message }} <br>
         </div>
         {% endfor %}
     {% endif %}
