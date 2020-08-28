@@ -38,9 +38,7 @@ class ProductionConfig(Config):
     MAIL_USE_TLS = 1
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-
-    MAIL_SUBJECT_PREFIX = '[CollegeJournal]'
-    MAIL_SENDER = f'CollegeJournal Admin <{MAIL_USERNAME}>'
+    MAIL_DEFAULT_SENDER = f'{MAIL_USERNAME}'
 
 
 config = {
