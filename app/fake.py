@@ -1,3 +1,12 @@
+"""
+Fake - Generate fake account & journal (for development purpose)
+
+Function:
+    users       : generate fake user account
+    journals    : generate fake journal content
+
+"""
+
 from random import randint
 from sqlalchemy.exc import IntegrityError
 from faker import Faker
@@ -11,7 +20,8 @@ def users(count=100):
         s = Student(email=fake.email(),
                     username=fake.user_name(),
                     password='password',
-                    fullname=fake.name()
+                    fullname=fake.name(),
+                    confirmed=True
                     )
         db.session.add(s)
         try:

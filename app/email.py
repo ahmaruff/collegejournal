@@ -1,3 +1,23 @@
+"""
+Email - Provide email service (flask-mail)
+
+
+we have to define flask-mail service configuration via config.py
+
+Function:
+    send_async_email()
+        send asynchronous email
+
+    send_email()
+        send email (mostly for sending accout confirmation token)
+        templates directory : templates/auth/email/
+
+    send_resetpassword_req()
+        send reset password link via email
+        templates directory : templates/auth/email/
+"""
+
+
 from flask_mail import Message
 from app import mail, config
 from flask import render_template, current_app

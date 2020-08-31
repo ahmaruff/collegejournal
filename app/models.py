@@ -1,3 +1,11 @@
+"""
+Models - Define database model using SQLAlchemy ORM (flask-sqlalchemy)
+
+this models contain three class/database table >> Student, Course, & Journal.
+with Journal table as associative/join table for Student & Course.
+
+"""
+
 from app import db
 from datetime import datetime
 from flask_login import UserMixin
